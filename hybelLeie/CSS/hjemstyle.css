@@ -1,0 +1,92 @@
+
+body {
+    background-color: rgb(241, 241, 241);
+
+}
+
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: rgb(226, 220, 200);
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: rgb(16, 15, 15);
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a.loggUT {
+    float: right;
+    color: rgb(16, 15, 15);
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(15, 61, 62);
+    color: rgb(241, 241, 241);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: rgb(15, 61, 62);
+    color: rgb(241, 241, 241);
+  }
+
+  table {
+    width: 80%;
+    position: relative;
+    margin: 50px auto;
+    border: 2px solid;
+    background-color: rgb(226, 220, 200);
+  }
+
+  td{
+    text-align: center;
+    border: 2px solid;
+  }
+
+  p{
+    text-align: right;
+  }
+
+
+.box img {
+    width: 80%;
+    height: 80%;
+}
+
+.box1 img {
+    object-fit: fill;
+    margin: 20px;
+
+}
+
+.box2 img {
+    object-fit: fill;
+    margin: 20px;
+   
+}
+
+.box3 img {
+    object-fit: fill;
+    margin: 20px;
+    
+}
+
+.wrapper {
+    display: flex;
+    background-color: #673aaf;
+    
+}
+
