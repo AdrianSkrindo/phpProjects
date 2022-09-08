@@ -30,10 +30,14 @@
             echo "Rute ".$i.": ".$milliarder." milliarder, ".$millioner." millioner, ".$tusner." tusen, ".$hundre." hundre, og ".$enere."<br>";
         } else {
             echo "Rute ".$i.": ".$korn."<br>";
-
         }
-        
+
     }
+
+
+
+        
+    
 
     ?>
 
