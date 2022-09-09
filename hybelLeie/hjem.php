@@ -25,7 +25,7 @@
 <p>Du er nå logget inn på brukeren <?php echo $_SESSION['brukernavn']."."; ?></p>
 
 <?php
-
+/*
     $sql = "SELECT sted, pris, hybel_id FROM hybel";
     $result = mysqli_query($conn, $sql);
     $hybelArray = array();
@@ -75,28 +75,14 @@
 }
 
 
-echo build_table($hybelArray);
+echo build_table($hybelArray); */
 ?>
-
-<table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-  </tr>
-  <tr>
-    <td>Peter</td>
-    <td>Griffin</td>
-  </tr>
-  <tr>
-    <td>Lois</td>
-    <td>Griffin</td>
-  </tr>
-</table>
-
 <div class="wrapper">
-    <div class="box box1"><img src="crusher.jpg" alt="a balloon"></div>
-    <div class="box box2"><img src="crusher.jpg" alt="a balloon"></div>
-    <div class="box box3"><img src="crusher.jpg" alt="a balloon"></div>
+    <div class="box"><img src="crusher.jpg" alt="a balloon"></div>
+    <div class="box"><img src="crusher.jpg" alt="a balloon"></div>
+    <div class="box"><img src="crusher.jpg" alt="a balloon"></div>
+    <div class="box"><img src="crusher.jpg" alt="a balloon"></div>
+    <div class="box"><img src="crusher.jpg" alt="a balloon"></div>
 </div>   
 
 
