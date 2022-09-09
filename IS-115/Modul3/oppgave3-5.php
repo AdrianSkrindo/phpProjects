@@ -24,7 +24,7 @@
         if ($korn > 1000000000){
 
             $milliarder = $korn/1000000000;
-            $milliarder = number_format($milliarder, 0);
+            $milliarder = number_format($milliarder, 0, '.', '');
             $millioner = ($korn-$milliarder)/1000000;
             $millioner = substr(strval(number_format($millioner, 0)), 3);
             $tusner = ($korn-$milliarder-$millioner)/1000;
