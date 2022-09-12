@@ -13,6 +13,7 @@
 <a href="Oving1.php"> Øving</a> <br>
 <a href="booleanCheck.php"> Boolean</a> <br>
 <a href="switchOving.php"> Switch</a> <br>
+<a href="toTall.php"> To like tall</a> <br>
 
 </body>
 </html>
