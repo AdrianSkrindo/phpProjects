@@ -16,7 +16,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'hybelprosjekt') or die ("Kunne 
 </head>
 <body>
 <div class="login">
-  <h1>H Y B E L</h1>
+  <h1>H Y B B E L . N O</h1>
   <form method="post" action="" method="post">
     <p><input type="text" name="brukernavn" value="" placeholder="Brukernavn eller e-post"></p>
     <p><input type="password" name="passord" value="" placeholder="Passord"></p>

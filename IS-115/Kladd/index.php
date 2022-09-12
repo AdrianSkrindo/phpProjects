@@ -11,6 +11,8 @@
 <a href="html_external.php"> External</a> <br>
 <a href="html_internal.php"> Internal</a> <br>
 <a href="Oving1.php"> Øving</a> <br>
+<a href="booleanCheck.php"> Boolean</a> <br>
+<a href="switchOving.php"> Switch</a> <br>
 
 </body>
 </html>

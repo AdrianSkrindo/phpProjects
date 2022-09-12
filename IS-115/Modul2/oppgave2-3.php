@@ -21,6 +21,6 @@ $setning ="Thereses familie skulle ha ris til middag. Hun ville heller ha en is 
 <p>Funksjonen krever to ulike parametere, først hva vi ønsker å sjekke ut, her laget jeg bare en ny variable som inneholdt teksten oppgitt i oppgaven.</p>
 <p>Videre krever den også en string som forteller hvilket ord vi ønsker at den skal søke opp.</p><br>
 <p>Ordet is er nevnt <?php echo substr_count($setning, "is")." i teksten oppgitt i oppgaven.";?></p>
-   
+
 </body>
 </html>

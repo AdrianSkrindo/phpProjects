@@ -17,7 +17,6 @@ periode på n år kan beregnes. Skriv ut ny saldo for hvert år og Sn etter n å
    <?php 
    
     $i = ""; //år
-    //$rente = 5;
     $saldo = 250000;
 
     for ($i = 0; $i <= 10; $i++) {
