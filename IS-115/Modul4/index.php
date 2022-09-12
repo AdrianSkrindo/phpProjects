@@ -11,11 +11,11 @@
     <h1>Modul 4</h1>
 
     <div class="center">
-        <a href="oppgave4-1.php"> Oppgave 1</a> - <br>
-        <a href="oppgave4-2.php"> Oppgave 2</a> - <br>
-        <a href="oppgave4-3.php"> Oppgave 3</a> - <br>
-        <a href="oppgave4-4.php"> Oppgave 4</a> - <br>
-        <a href="oppgave4-5.php"> Oppgave 5</a> - <br>
+        <a href="oppgave4-1.php"> Oppgave 1</a> - skriv ut innholdet i en matrise<br>
+        <a href="oppgave4-2.php"> Oppgave 2</a> - registrering av ny bruker<br>
+        <a href="oppgave4-3.php"> Oppgave 3</a> - endring av en brukeroppføring<br>
+        <a href="oppgave4-4.php"> Oppgave 4</a> - overskriving av matrise<br>
+        <a href="oppgave4-5.php"> Oppgave 5</a> - liten konkurranse<br>
     </div>
 
     

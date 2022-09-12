@@ -15,7 +15,7 @@ klammeparentes må erstattes med det respektive kommunenavnet som sjekkes.  -->
     <h1>Oppgave 4</h1>
 
     <?php
-        $by = "Oslo"; //Input variabel.
+        $by = "Birkenes"; //Input variabel.
         //Bruker match for å velge hva skal verdi $riktigFylke skal ha. Og printer dette under.
         $riktigFylke = match ($by) {
             "Kristiansand" => "Agder",
