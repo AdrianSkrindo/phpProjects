@@ -15,8 +15,8 @@ klammeparentes må erstattes med det respektive kommunenavnet som sjekkes.  -->
     <h1>Oppgave 4</h1>
 
     <?php
-        $by = "Kristiansand";
-
+        $by = "Oslo"; //Input variabel.
+        //Bruker match for å velge hva skal verdi $riktigFylke skal ha. Og printer dette under.
         $riktigFylke = match ($by) {
             "Kristiansand" => "Agder",
             "Lillesand" => "Agder",
@@ -28,6 +28,8 @@ klammeparentes må erstattes med det respektive kommunenavnet som sjekkes.  -->
             "Trondheim" => "Trøndelag",
             "Bodø" => "Nordland",
             "Alta" => "Troms og Finnmark",
+            default => "et ukjent",
+            //Ved en input som ikke matcher denne. Kan vi velge en default verdi som settes til variabelen.
         };
 
 echo $by." ligger i ".$riktigFylke." fylke.";

@@ -15,7 +15,7 @@
         $myndig = "";
 
         //Definerer variablene. Setter $myndig tom, fordi den endres i "if-setningen" uansett.
-
+        //Bestemmer hva som må oppfylles for at handlingen inni klammeparantesene skal oppfylles. Hvis ikke oppfylles, gjør "else"
         if ($alder >= 18){
             $myndig = "myndig";
         } else{

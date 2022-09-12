@@ -16,10 +16,12 @@
 
     <?php 
     
+    //FOr-loop for å bestemme at vi skal regne ut fra rute 1 til rute 64. Med en post-increment. 
+
     $korn = 1;
     for ($i = 1; $i <= 64; $i++) {
     
-        $korn = 2**($i-1) * 1;
+        $korn = 2**($i-1) * 1;  //Den matematiske utregning for antall hvetekorn pr rute.
         
         if ($korn > 1000000000){
 
@@ -34,7 +36,6 @@
             $enere = ($korn-$milliarder-$millioner-$tusner-$hundre)/1;
             $enere = substr(strval(number_format($enere, 0)), 12);
             echo "Rute ".$i.": ".$milliarder." milliarder, ".$millioner." millioner, ".$tusner." tusen, ".$hundre." hundre, og ".$enere." enere"."<br>";
-
 
 
         

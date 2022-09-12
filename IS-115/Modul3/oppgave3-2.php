@@ -10,6 +10,9 @@
     <h1>Oppgave 2</h1>
 
     <?php 
+
+    //en for loop, setter x=0 inni loopen, og sier at hver gang x er mindre enn 10 at den skal printe x
+    //legger sammen alle tidligere x'er ved hjelp += operator inn i variabelen total, og printer total etter loopen. 
     $total = 0;
     for($x=0; $x < 10; $x++){
         echo "$x <br>";
