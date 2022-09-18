@@ -14,6 +14,7 @@
 <a href="booleanCheck.php"> Boolean</a> <br>
 <a href="switchOving.php"> Switch</a> <br>
 <a href="toTall.php"> To like tall</a> <br>
+<a href="matrise.php"> Matrise øving</a> <br>
 
 </body>
 </html>
