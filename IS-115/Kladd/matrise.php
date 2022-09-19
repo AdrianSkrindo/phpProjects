@@ -1,16 +1,13 @@
 <?php
 
-$deltaker = array(
-    'bruker' => array (
-        'fornavn' => "Silje",
-        'etternavn' => "Johansen",
-        'brukernavn' => "siljo"
-    ),
-    'avdelig' => "Kristiansand"
-);
+$deltaker = array('Silje', 'Johan', 'Geir', 17 =>'Petra');
+$deltaker[] = 'Hallgeir';
 
 echo "<pre>";
 print_r($deltaker);
-echo "</pre>"
+echo "</pre>";
+
+echo "<br>";
+echo "Hei ".$deltaker[18];
 
 ?> 

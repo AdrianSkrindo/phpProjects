@@ -15,6 +15,10 @@
 <a href="switchOving.php"> Switch</a> <br>
 <a href="toTall.php"> To like tall</a> <br>
 <a href="matrise.php"> Matrise øving</a> <br>
+<a href="registrer.php"> Registreringskjema</a> <br>
+<a href="OvingMatrise1.php"> Øving matrise</a> <br>
+<a href="OvingMatrise2.php"> Øving matrise 2</a> <br>
+<a href="OvingMatrise3.php"> Øving matrise 3</a> <br>
 
 </body>
 </html>
