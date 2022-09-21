@@ -1,3 +1,42 @@
+<?php
+    if(isset($_REQUEST['registrer']))
+    
+    echo "Følgende informasjon er hentet fra skjemaet: <br>";
+    array_pop($_REQUEST);
+    foreach($_REQUEST as $info => $verdi){
+        
+        if($info == "fnavn")
+        {
+            echo "Fornavn";
+        }
+        elseif ($info == "enavn")
+        {
+            echo "Etternavn";
+        }
+        elseif($info == "epost")
+        {
+            echo "Epost-adresse";
+        }
+        elseif($info == "tlf")
+        {
+            echo "Telefon";
+        }
+        elseif($info =="fdato")
+        {
+            echo "Fødselsdato";
+        }
+
+        echo $info.": ".$verdi. "<br>";
+    }
+
+    echo "<br>Gratulerer med din nye bruker ".$_REQUEST['fnavn']."!";
+
+    echo "<br>";
+    echo "<pre>";
+    print_r($_REQUEST);
+    echo "</pre><br>";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +58,18 @@ oversiktlig måte  sammen med beskjed om  at  den nye  brukeren er  registrert. 
 denne informasjonen i en database, men det skal vi gjøre  litt senere. Lag en video hvor du beskriver og 
 demonstrerer koden. -->
 
-navn, mobilnr, epost
+
+<pre>
+    <form method="post" action="">
+      Fornavn: <input type="text" name="fnavn" placeholder="Fornavn" required><br>
+      Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
+      E-post: <input type="email" name="epost" placeholder="E-post" required><br>
+      Telefon: <input type="tel" name="tlf" placeholder="Mobilnummer" required><br>
+      Fødselsdato: <input type="date" name="fdato" value="2001-05-05"><br>
+      <input type="submit" name="registrer" value="Registrér">
+    </form>
+
+</pre>
 
     
 </body>
