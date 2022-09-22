@@ -5,8 +5,8 @@ endrer  alle  verdiene  i  matrisen  til  noe  annet som  du  selv  bestemmer.  
 indeksene i matrisen slik at hver indeks blir 10 høyere (f.eks. indeks 0 skal nå bli indeks 10 osv.).  Hint: 
 sjekk ut innebygde funksjoner i PHP for dette. */
 
-$rekke = array(0,1,2,3,4,5,6,7,8,9
-);
+$rekke = array(0,1,2,3,4,5,6,7,8,9);
+$rekke2=array(0,1,2,3,4,5,6,7,8,9);
 
 echo "<pre>";
 print_r($rekke);
@@ -17,15 +17,28 @@ foreach($rekke as $key => $value){
     echo $value."<br>";
 }
 
-foreach($rekke as &$value2){
-    $value2 = rand(1,100);
+foreach($rekke as &$value){
+    $value = rand(1,100);
 }
 
 echo "Foreach løkke etter at starttallene er endret:<br>";
-foreach($rekke as $key => $value){
+foreach($rekke as $key => $value2){
+    echo $value2."<br>";
+}
+
+echo "<br>";
+
+foreach($rekke2 as $key =>$value) {
+    $value = $value + 10;
     echo $value."<br>";
 }
 
+
+
+echo "<br>";
+echo "<pre>";
+print_r($rekke2);
+echo "</pre><br>";
 
 ?>
 
