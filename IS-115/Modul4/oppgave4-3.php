@@ -17,16 +17,33 @@ $data = array(
 
 if(isset($_REQUEST['registrer']))
     {
-        $data = $_REQUEST;
+        /*$data = $_REQUEST;
         echo "<pre>";
         print_r($data);
         echo "</pre>";
-        echo "Brukeropplysningene ble endret!";
+        echo "Brukeropplysningene ble endret!";*/
+        echo "Fornavn: ". $_REQUEST['fnavn']."<br>";
+        echo "Etternavn: ". $_REQUEST['enavn']."<br>";
+        if(filter_var($_REQUEST['epost'], FILTER_VALIDATE_EMAIL)){
+            echo "Epost: ".$_REQUEST['epost'];
+        }else{
+            echo $_REQUEST['epost']." har ikke gyldig epost-format!";
+        }
+        echo "<br>Telefon-nummer: ".$_REQUEST['tlf']."<br>";
+        echo "Fødselsdato: ".$_REQUEST['fdato']."<br>";
+
+        echo "<br>Brukeropplysningene dine ble endret!";
     }
     else {
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
+        echo "Fornavn: ". $data['fnavn']."<br>";
+        echo "Etternavn: ". $data['enavn']."<br>";
+        if(filter_var($data['epost'], FILTER_VALIDATE_EMAIL)){
+            echo "Epost: ".$data['epost'];
+        }else{
+            echo $data['epost']." har ikke gyldig epost-format!";
+        }
+        echo "<br>Telefon-nummer: ".$data['tlf']."<br>";
+        echo "Fødselsdato: ".$data['date']."<br>";
     }
 
 
@@ -45,10 +62,10 @@ if(isset($_REQUEST['registrer']))
 
 <pre>
     <form method="post" action="">
-      Fornavn: <input type="text" name="fnavn" value="<?php $data['fnavn'];?>"><br>
-      Etternavn: <input type="text" name="enavn" placeholder="Etternavn" ><br>
-      E-post: <input type="email" name="epost" placeholder="E-post"><br>
-      Telefon: <input type="tel" name="tlf"  value="<?php $data['tlf']?>"><br>
+      Fornavn: <input type="text" name="fnavn" value="<?php if (array_key_exists('fnavn', $_REQUEST)){echo $_REQUEST['fnavn'];}else{echo $data['fnavn'];}?>" required><br>
+      Etternavn: <input type="text" name="enavn" value="<?php if (array_key_exists('enavn', $_REQUEST)){echo $_REQUEST['enavn'];}else{echo $data['enavn'];}?>" required><br>
+      E-post: <input type="email" name="epost" value="<?php if (array_key_exists('epost', $_REQUEST)){echo $_REQUEST['epost'];}else{echo $data['epost'];}?>" required><br>
+      Telefon: <input type="tel" name="tlf"  value="<?php if (array_key_exists('tlf', $_REQUEST)){echo $_REQUEST['tlf'];}else{echo $data['tlf'];}?>" required><br>
       Fødselsdato: <input type="date" name="fdato" value="2001-05-05"><br>
       <input type="submit" name="registrer" value="Registrér">
     </form>
