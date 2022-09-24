@@ -1,43 +1,32 @@
 <?php
-    if(isset($_REQUEST['registrer'])){
-    //isset sjekker om registrert knappen er trykket, om den er knyttet kjøres foreach loopen og printer verdiene i indeksene.
-    echo "Følgende informasjon er hentet fra skjemaet: <br>";
-    array_pop($_REQUEST); //array_pop for ikke å printe 'registrer' verdien
-    foreach($_REQUEST as $info => $verdi){
-        
-        if($info == "fnavn")
-        {
-            echo "Fornavn";
-        }
-        elseif ($info == "enavn")
-        {
-            echo "Etternavn";
-        }
-        elseif($info == "epost")
-        {
-            echo "Epost-adresse";
-        }
-        elseif($info == "tlf")
-        {
-            echo "Telefon";
-        }
-        elseif($info =="fdato")
-        {
-            echo "Fødselsdato";
-        }
-
-        echo $info.": ".$verdi. "<br>";
+    function vask($var){
+        $var = strip_tags($var);
+        $var = htmlentities($var);
+        return $var;
     }
+    
+    
+    if(isset($_REQUEST['registrer'])){
+
+    $fornavn = vask($_REQUEST['fnavn']);
+    $etternavn = vask($_REQUEST['enavn']);
+
+    //Kan også bruker filter_var funksjonen.
+    //isset sjekker om registrert knappen er trykket, om den er knyttet kjøres foreach loopen og printer verdiene i indeksene.
+    echo "Følgende informasjon er hentet fra skjemaet: <br><br>";
+    echo "Fornavn: ".$fornavn."<br>";
+    echo "Etternavn: ".$etternavn."<br>";
+    if(filter_var($_REQUEST['epost'], FILTER_VALIDATE_EMAIL)){
+        echo "Epost: ".$_REQUEST['epost'];
+    }else{
+        echo $_REQUEST['epost']." har ikke gyldig epost-format!";
+    }
+    echo "<br>Telefon-nummer: ".$_REQUEST['tlf']."<br>";
+    echo "Fødselsdato: ".$_REQUEST['fdato']."<br>";
+
     echo "<br>Gratulerer med din nye bruker ".$_REQUEST['fnavn']."!";
 }
 
-
-
-
-   /* echo "<br>";
-    echo "<pre>";
-    print_r($_REQUEST);
-    echo "</pre><br>";*/
 ?>
 
 <!DOCTYPE html>
