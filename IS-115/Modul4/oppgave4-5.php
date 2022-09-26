@@ -13,52 +13,76 @@ Når det er én deltaker igjen, skal navnet på vinneren annonseres.
 
 $deltakere = array(
     'Adrian' => 0,
-    'Simen' =>0,
-    'Emanuel' =>0,
-    'Kenny'=>0,
-    'Kevin'=>0,
-    'Sondre' =>0,
-    'Peter'=>0,
-    'Markus'=>0,
-    'Ulrik'=>0,
-    'Steffen'=>0
+    'Simen' => 0,
+    'Emanuel' => 0,
+    'Kenny' => 0,
+    'Kevin' => 0,
+    'Sondre' => 0,
+    'Peter' => 0,
+    'Markus' => 0,
+    'Ulrik' => 0,
+    'Steffen' => 0
 );
 
-foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
-}
+echo "Velkommen til denne konkurransen!<br><br>";
+for ($x = 1; $x <= 9; $x++) {
 
-foreach($deltakere as &$poeng){
-    $poeng = rand(1,50);
-}
+    echo "RUNDE ".$x."!<br>";
+    /*foreach ($deltakere as $navn => $poeng) {
+        echo $navn . " har " . $poeng . " poeng.<br>";
+    }*/
 
-asort($deltakere);
+    echo "<br>TALLENE TREKKES!<br>";
 
-echo "<br>";
-foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
-}
+    foreach ($deltakere as &$poeng) {
+        $poeng = rand(1, 50);
+    }
 
-$fjernet = array_shift($deltakere);
+    asort($deltakere);
 
-echo "<br>";
-echo $fjernet." hadde minst poengsum, og ryker dermed ut av konkurransen!";
-/*foreach($deltakere as $navn => $poeng){
+    echo "<br>";
+    foreach ($deltakere as $navn => $poeng) {
+        echo $navn . " har " . $poeng . " poeng.<br>";
+    }
+
+    //bruker array_flip for å bytte plass på nøkkler og verdier.
+
+    //slik at ved array_shift, som returnerer første verdien i rekke,
+    //får jeg nøkkelen til $deltaker, altså navnet og ikke verdien til spilleren.
+    $flipped = array_flip($deltakere);
+    $fjernet = array_shift($flipped);
+
+    unset($deltakere[$fjernet]);
+
+    echo "<br>";
+    echo $fjernet . " hadde minst poengsum, og ryker dermed ut av konkurransen!<br><br>";
+    /*foreach($deltakere as $navn => $poeng){
     echo $navn." har ".$poeng." poeng.<br>";
 }*/
 
+   /* echo "<pre>";
+    print_r($deltakere);
+    echo "</pre>";*/
+
+    if (count($deltakere) <= 1) {
+        echo $navn . " er eneste spiller igjen, og har vunent konkurransen!";
+    }
+}
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
