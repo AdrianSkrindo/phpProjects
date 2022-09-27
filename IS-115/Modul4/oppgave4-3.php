@@ -7,6 +7,8 @@ Om du ønsker å gjøre løsningen ekstra elegant kan du først sjekke om det er
 informasjonen skrives til  matrisen. Brukeren må  få  beskjed om  at  brukeroppføringen er endret.  De 
 samme reglene  for  feilmelding  som i  skjemaet  i  oppgave 4  gjelder  også her.   Lag  en  video  hvor du 
 beskriver og demonstrerer koden. */
+
+//start matrise, som ønskes å endre.
 $data = array(
     'fnavn' => 'Adrian',
     'enavn' => 'Lindland',
@@ -15,13 +17,10 @@ $data = array(
     'date' => '2001-05-05'
 );
 
+//sjekker om knappen er trykket, og at koden skal kjøres.
 if(isset($_REQUEST['registrer']))
     {
-        /*$data = $_REQUEST;
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        echo "Brukeropplysningene ble endret!";*/
+
         echo "Fornavn: ". $_REQUEST['fnavn']."<br>";
         echo "Etternavn: ". $_REQUEST['enavn']."<br>";
         if(filter_var($_REQUEST['epost'], FILTER_VALIDATE_EMAIL)){
@@ -59,7 +58,9 @@ if(isset($_REQUEST['registrer']))
 </head>
 <body>
 
-
+<!--
+Avansert kode i value feltet, sjekker om det er sendt noe inn i den globale matrise request, hvis ikke bruker den data fra matrisen $data som er satt i starten av oppgaven.
+-->
 <pre>
     <form method="post" action="">
       Fornavn: <input type="text" name="fnavn" value="<?php if (array_key_exists('fnavn', $_REQUEST)){echo $_REQUEST['fnavn'];}else{echo $data['fnavn'];}?>" required><br>

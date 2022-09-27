@@ -29,7 +29,7 @@ klammeparentes må erstattes med det respektive kommunenavnet som sjekkes.  -->
             "Bodø" => "Nordland",
             "Alta" => "Troms og Finnmark",
             default => "et ukjent",
-            //Ved en input som ikke matcher denne. Kan vi velge en default verdi som settes til variabelen.
+            //Ved en input som ikke matcher denne, kan vi velge en default verdi som settes til variabelen.
         };
 
 echo $by." ligger i ".$riktigFylke." fylke.";

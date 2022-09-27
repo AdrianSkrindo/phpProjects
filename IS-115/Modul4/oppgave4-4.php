@@ -5,7 +5,7 @@ endrer  alle  verdiene  i  matrisen  til  noe  annet som  du  selv  bestemmer.  
 indeksene i matrisen slik at hver indeks blir 10 høyere (f.eks. indeks 0 skal nå bli indeks 10 osv.).  Hint: 
 sjekk ut innebygde funksjoner i PHP for dette. */
 
-
+//Start matrise, bruker range, i stedet for å skrive alle tallene manuelt.
 $rekke = array(range(0,9));
 echo "<pre>";
 print_r($rekke);

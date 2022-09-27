@@ -2,15 +2,28 @@
 
 
 
-
+    //funksjon for å regne ut gjennomsnitt
     function gjennomsnitt($tall1, $tall2, $tall3, $tall4){
         $gjennomsnitt = ($tall1 + $tall2 + $tall3 + $tall4) / 4;
         return $gjennomsnitt;
     }
 
+    //funksjon for å regne ut standardavvik
+    function standardavvik($tall1, $tall2, $tall3, $tall4){
+        $gjennomsnitt = ($tall1 + $tall2 + $tall3 + $tall4) / 4;
+        $standardavvik1 = ($tall1**2 + $tall2**2 + $tall3**2 + $tall4**2)-(4*($gjennomsnitt**2));
+        $standardavvik = sqrt($standardavvik1/4);
+        return $standardavvik;
+    }
+
+    //to isset funksjoner, bestemmer hvilken av regneoperasjonen som skal utføres.
     if(isset($_REQUEST['gjennomsnitt'])){
-    echo "Gjennomsnittet av tallene ".$_REQUEST['tall1'].", ".$_REQUEST['tall2'].", ".$_REQUEST['tall3']." ,".$_REQUEST['tall4']." er: " .gjennomsnitt($_REQUEST['tall1'],$_REQUEST['tall2'],$_REQUEST['tall3'],$_REQUEST['tall4'],);
-    } else {
+        echo "Gjennomsnittet av tallene ".$_REQUEST['tall1'].", ".$_REQUEST['tall2'].", ".$_REQUEST['tall3']." ,".$_REQUEST['tall4']." er: " .
+        gjennomsnitt($_REQUEST['tall1'],$_REQUEST['tall2'],$_REQUEST['tall3'],$_REQUEST['tall4'],);
+    }elseif(isset($_REQUEST['standar'])){
+        echo "Standardavvik av tallene ".$_REQUEST['tall1'].", ".$_REQUEST['tall2'].", ".$_REQUEST['tall3']." ,".$_REQUEST['tall4']." er: ".
+        standardavvik($_REQUEST['tall1'],$_REQUEST['tall2'],$_REQUEST['tall3'],$_REQUEST['tall4'],);
+    }else {
         echo "Her kan du fylle inn tall og velge mellom gjennomsnitt og standardavvik!";
     }
 ?>

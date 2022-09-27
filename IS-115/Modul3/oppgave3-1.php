@@ -21,6 +21,7 @@
         } else{
             $myndig = "ikke myndig";};
 
+        //printer resultat
         echo $navn." er ".$alder." og er dermed ".$myndig.".";
             ?>
 </body>

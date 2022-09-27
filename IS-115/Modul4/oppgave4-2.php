@@ -3,6 +3,7 @@
     //isset sjekker om registrert knappen er trykket, om den er knyttet kjøres foreach loopen og printer verdiene i indeksene.
     echo "Følgende informasjon er hentet fra skjemaet: <br>";
     array_pop($_REQUEST); //array_pop for ikke å printe 'registrer' verdien
+    //foreach loop, for å printe alle verdiene, endrer indeks navn med if setninger.
     foreach($_REQUEST as $info => $verdi){
         
         if($info == "fnavn")
@@ -30,14 +31,6 @@
     }
     echo "<br>Gratulerer med din nye bruker ".$_REQUEST['fnavn']."!";
 }
-
-
-
-
-   /* echo "<br>";
-    echo "<pre>";
-    print_r($_REQUEST);
-    echo "</pre><br>";*/
 ?>
 
 <!DOCTYPE html>

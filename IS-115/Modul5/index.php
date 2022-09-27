@@ -12,10 +12,10 @@
 
     <div class="center">
         <a href="oppgave5-1.php"> Oppgave 1</a> - standaravvik<br>
-        <a href="oppgave5-2.php"> Oppgave 2</a> - <br>
-        <a href="oppgave5-3.php"> Oppgave 3</a> - <br>
-        <a href="oppgave5-4.php"> Oppgave 4</a> - <br>
-        <a href="oppgave5-5.php"> Oppgave 5</a> - <br>
+        <a href="oppgave5-2.php"> Oppgave 2</a> - plan for filstruktur og klassebibliotek<br>
+        <a href="oppgave5-3.php"> Oppgave 3</a> - kommentering<br>
+        <a href="oppgave5-4.php"> Oppgave 4</a> - god programmeringsskikk<br>
+        <a href="oppgave5-5.php"> Oppgave 5</a> - kryptering<br>
     </div>
 
     

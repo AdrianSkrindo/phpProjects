@@ -25,12 +25,11 @@ $deltakere = array(
 );
 
 echo "Velkommen til denne konkurransen!<br><br>";
+
+//I stedet for å skrive 9 runder, velger jeg å bruke en for loop, for å bestemme at den skal kjøre 9 runder, eller til det bare er en spiller igjen.
 for ($x = 1; $x <= 9; $x++) {
 
     echo "RUNDE ".$x."!<br>";
-    /*foreach ($deltakere as $navn => $poeng) {
-        echo $navn . " har " . $poeng . " poeng.<br>";
-    }*/
 
     echo "<br>TALLENE TREKKES!<br>";
 
@@ -56,14 +55,8 @@ for ($x = 1; $x <= 9; $x++) {
 
     echo "<br>";
     echo $fjernet . " hadde minst poengsum, og ryker dermed ut av konkurransen!<br><br>";
-    /*foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
-}*/
 
-   /* echo "<pre>";
-    print_r($deltakere);
-    echo "</pre>";*/
-
+    //skriver ut siste deltakeren.
     if (count($deltakere) <= 1) {
         echo $navn . " er eneste spiller igjen, og har vunent konkurransen!";
     }
