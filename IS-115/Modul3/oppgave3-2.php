@@ -19,6 +19,7 @@
         $total +=$x;
     };
 
+    //printer verdien av for-loopen.
     echo "<br>Ferdig å telle! Summen av tallene ble $total";
 
 

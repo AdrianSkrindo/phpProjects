@@ -23,12 +23,13 @@
     
         $korn = 2**($i-1) * 1;  //Den matematiske utregning for antall hvetekorn pr rute.
         
+        //med en gang antall korn passerer 1mrd, starter ifsetning for utskrvning av tallene.
         if ($korn > 1000000000){
 
             $milliarder = $korn/1000000000;
-            $milliarder = number_format($milliarder, 0, '.', '');
+            $milliarder = number_format($milliarder, 0, '.', ''); //number_format for å bestemme hvordan vi ønsker at tallen skal formateres
             $millioner = ($korn-$milliarder)/1000000;
-            $millioner = substr(strval(number_format($millioner, 0)), 3);
+            $millioner = substr(strval(number_format($millioner, 0)), 3); //
             $tusner = ($korn-$milliarder-$millioner)/1000;
             $tusner = substr(strval(number_format($tusner, 0)), 6);
             $hundre = ($korn-$milliarder-$millioner-$tusner)/100;

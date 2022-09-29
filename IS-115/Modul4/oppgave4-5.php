@@ -12,62 +12,70 @@ Når det er én deltaker igjen, skal navnet på vinneren annonseres.
 */
 
 $deltakere = array(
-    array('Adrian', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Simen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Emanuel', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Kenny', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Kevin', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Sondre', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Peter', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Markus', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Ulrik', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-    array('Steffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    'Adrian' => 0,
+    'Simen' => 0,
+    'Emanuel' => 0,
+    'Kenny' => 0,
+    'Kevin' => 0,
+    'Sondre' => 0,
+    'Peter' => 0,
+    'Markus' => 0,
+    'Ulrik' => 0,
+    'Steffen' => 0
 );
 
-echo "<pre>";
-print_r($deltakere);
-echo "</pre>";
+echo "Velkommen til denne konkurransen!<br><br>";
 
+//I stedet for å skrive 9 runder, velger jeg å bruke en for loop, for å bestemme at den skal kjøre 9 runder, eller til det bare er en spiller igjen.
+for ($x = 1; $x <= 9; $x++) {
 
+    echo "RUNDE ".$x."!<br>";
 
-foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
+    echo "<br>TALLENE TREKKES!<br>";
+
+    foreach ($deltakere as &$poeng) {
+        $poeng = rand(1, 50);
+    }
+
+    asort($deltakere);
+
+    echo "<br>";
+    foreach ($deltakere as $navn => $poeng) {
+        echo $navn . " har " . $poeng . " poeng.<br>";
+    }
+
+    //bruker array_flip for å bytte plass på nøkkler og verdier.
+
+    //slik at ved array_shift, som returnerer første verdien i rekke,
+    //får jeg nøkkelen til $deltaker, altså navnet og ikke verdien til spilleren.
+    $flipped = array_flip($deltakere);
+    $fjernet = array_shift($flipped);
+
+    unset($deltakere[$fjernet]);
+
+    echo "<br>";
+    echo $fjernet . " hadde minst poengsum, og ryker dermed ut av konkurransen!<br><br>";
+
+    //skriver ut siste deltakeren.
+    if (count($deltakere) <= 1) {
+        echo $navn . " er eneste spiller igjen, og har vunent konkurransen!";
+    }
 }
-
-
-//Lage en matrise for hver runde, returnere verdien av indeksen på den som scorer lavest, for så å trekke fra i neste matrise?
-/*
-foreach($deltakere as &$poeng){
-    $poeng = rand(1,50);
-}
-
-asort($deltakere);
-
-echo "<br>";
-foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
-}
-
-$fjernet = array_shift($deltakere);
-
-echo "<br>";
-echo $fjernet." hadde minst poengsum, og ryker dermed ut av konkurransen!";
-foreach($deltakere as $navn => $poeng){
-    echo $navn." har ".$poeng." poeng.<br>";
-}*/
-
 
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

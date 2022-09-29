@@ -18,7 +18,7 @@
 <div class="topnav">
   <a class="active" href="hjem.php">Hjem</a>
   <a href="#news">Nyheter</a>
-  <a href="#contact">Min side</a>
+  <a href="minSide.php">Min side</a>
   <a class="loggUT" href="loggUT.php">Logg ut</a>
 </div>
 

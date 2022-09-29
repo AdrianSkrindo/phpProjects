@@ -1,46 +1,48 @@
 <?php
-    if(isset($_REQUEST['registrer'])){
-    //isset sjekker om registrert knappen er trykket, om den er knyttet kjøres foreach loopen og printer verdiene i indeksene.
-    echo "Følgende informasjon er hentet fra skjemaet: <br>";
-    array_pop($_REQUEST); //array_pop for ikke å printe 'registrer' verdien
-    //foreach loop, for å printe alle verdiene, endrer indeks navn med if setninger.
-    foreach($_REQUEST as $info => $verdi){
-        
-        if($info == "fnavn")
-        {
-            echo "Fornavn";
-        }
-        elseif ($info == "enavn")
-        {
-            echo "Etternavn";
-        }
-        elseif($info == "epost")
-        {
-            echo "Epost-adresse";
-        }
-        elseif($info == "tlf")
-        {
-            echo "Telefon";
-        }
-        elseif($info =="fdato")
-        {
-            echo "Fødselsdato";
-        }
-
-        echo $info.": ".$verdi. "<br>";
-    }
-    echo "<br>Gratulerer med din nye bruker ".$_REQUEST['fnavn']."!";
+//vaskefunksjon fra læreboka, returnerer input $var, etter vask.
+function vask($var)
+{
+    $var = strip_tags($var);
+    $var = htmlentities($var);
+    return $var;
 }
+
+//sjekker om regristrerknappen er trykket
+if (isset($_REQUEST['registrer'])) {
+
+    $fornavn = vask($_REQUEST['fnavn']);
+    $etternavn = vask($_REQUEST['enavn']);
+
+    //Kan også bruker filter_var funksjonen.
+    //isset sjekker om registrert knappen er trykket, om den er knyttet kjøres foreach loopen og printer verdiene i indeksene.
+    echo "Følgende informasjon er hentet fra skjemaet: <br><br>";
+    echo "Fornavn: " . $fornavn . "<br>";
+    echo "Etternavn: " . $etternavn . "<br>";
+
+    //filter_var funksjonen, med valgt filter, for å validere emailinput fra skjemaet til brukeren
+    if (filter_var($_REQUEST['epost'], FILTER_VALIDATE_EMAIL)) {
+        echo "Epost: " . $_REQUEST['epost'];
+    } else {
+        echo $_REQUEST['epost'] . " har ikke gyldig epost-format!";
+    }
+    echo "<br>Telefon-nummer: " . $_REQUEST['tlf'] . "<br>";
+    echo "Fødselsdato: " . $_REQUEST['fdato'] . "<br>";
+
+    echo "<br>Gratulerer med din nye bruker " . $_REQUEST['fnavn'] . "!";
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <!-- Lag et skjema som registrerer en ny bruker i systemet du utvikler. Skjemaet må inneholde all nødvendig 
 informasjon om brukeren (f.eks. navn, mobilnr., e-post osv.) og skal gi feilmelding dersom: 
@@ -55,7 +57,7 @@ denne informasjonen i en database, men det skal vi gjøre  litt senere. Lag en v
 demonstrerer koden. -->
 
 
-<pre>
+    <pre>
     <form method="post" action="">
       Fornavn: <input type="text" name="fnavn" placeholder="Fornavn" required><br>
       Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
@@ -67,6 +69,7 @@ demonstrerer koden. -->
 
 </pre>
 
-    
+
 </body>
+
 </html>

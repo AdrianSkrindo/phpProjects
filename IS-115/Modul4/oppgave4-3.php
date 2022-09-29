@@ -7,6 +7,8 @@ Om du ønsker å gjøre løsningen ekstra elegant kan du først sjekke om det er
 informasjonen skrives til  matrisen. Brukeren må  få  beskjed om  at  brukeroppføringen er endret.  De 
 samme reglene  for  feilmelding  som i  skjemaet  i  oppgave 4  gjelder  også her.   Lag  en  video  hvor du 
 beskriver og demonstrerer koden. */
+
+//start matrise, som ønskes å endre.
 $data = array(
     'fnavn' => 'Adrian',
     'enavn' => 'Lindland',
@@ -15,18 +17,32 @@ $data = array(
     'date' => '2001-05-05'
 );
 
+//sjekker om knappen er trykket, og at koden skal kjøres.
 if(isset($_REQUEST['registrer']))
     {
-        $data = $_REQUEST;
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        echo "Brukeropplysningene ble endret!";
+
+        echo "Fornavn: ". $_REQUEST['fnavn']."<br>";
+        echo "Etternavn: ". $_REQUEST['enavn']."<br>";
+        if(filter_var($_REQUEST['epost'], FILTER_VALIDATE_EMAIL)){
+            echo "Epost: ".$_REQUEST['epost'];
+        }else{
+            echo $_REQUEST['epost']." har ikke gyldig epost-format!";
+        }
+        echo "<br>Telefon-nummer: ".$_REQUEST['tlf']."<br>";
+        echo "Fødselsdato: ".$_REQUEST['fdato']."<br>";
+
+        echo "<br>Brukeropplysningene dine ble endret!";
     }
     else {
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
+        echo "Fornavn: ". $data['fnavn']."<br>";
+        echo "Etternavn: ". $data['enavn']."<br>";
+        if(filter_var($data['epost'], FILTER_VALIDATE_EMAIL)){
+            echo "Epost: ".$data['epost'];
+        }else{
+            echo $data['epost']." har ikke gyldig epost-format!";
+        }
+        echo "<br>Telefon-nummer: ".$data['tlf']."<br>";
+        echo "Fødselsdato: ".$data['date']."<br>";
     }
 
 
@@ -42,13 +58,15 @@ if(isset($_REQUEST['registrer']))
 </head>
 <body>
 
-
+<!--
+Avansert kode i value feltet, sjekker om det er sendt noe inn i den globale matrise request, hvis ikke bruker den data fra matrisen $data som er satt i starten av oppgaven.
+-->
 <pre>
     <form method="post" action="">
-      Fornavn: <input type="text" name="fnavn" placeholder="Fornavn" required><br>
-      Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
-      E-post: <input type="email" name="epost" placeholder="E-post" required><br>
-      Telefon: <input type="tel" name="tlf" placeholder="Mobilnummer" required><br>
+      Fornavn: <input type="text" name="fnavn" value="<?php if (array_key_exists('fnavn', $_REQUEST)){echo $_REQUEST['fnavn'];}else{echo $data['fnavn'];}?>" required><br>
+      Etternavn: <input type="text" name="enavn" value="<?php if (array_key_exists('enavn', $_REQUEST)){echo $_REQUEST['enavn'];}else{echo $data['enavn'];}?>" required><br>
+      E-post: <input type="email" name="epost" value="<?php if (array_key_exists('epost', $_REQUEST)){echo $_REQUEST['epost'];}else{echo $data['epost'];}?>" required><br>
+      Telefon: <input type="tel" name="tlf"  value="<?php if (array_key_exists('tlf', $_REQUEST)){echo $_REQUEST['tlf'];}else{echo $data['tlf'];}?>" required><br>
       Fødselsdato: <input type="date" name="fdato" value="2001-05-05"><br>
       <input type="submit" name="registrer" value="Registrér">
     </form>

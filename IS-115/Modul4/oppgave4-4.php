@@ -5,40 +5,30 @@ endrer  alle  verdiene  i  matrisen  til  noe  annet som  du  selv  bestemmer.  
 indeksene i matrisen slik at hver indeks blir 10 høyere (f.eks. indeks 0 skal nå bli indeks 10 osv.).  Hint: 
 sjekk ut innebygde funksjoner i PHP for dette. */
 
-$rekke = array(0,1,2,3,4,5,6,7,8,9);
-$rekke2=array(0,1,2,3,4,5,6,7,8,9);
-
+//Start matrise, bruker range, i stedet for å skrive alle tallene manuelt.
+$rekke = array(range(0,9));
 echo "<pre>";
 print_r($rekke);
-echo "</pre><br><br>";
-echo "Foreach løkke med start-tallene:<br>";
-
-foreach($rekke as $key => $value){
-    echo $value."<br>";
-}
-
-foreach($rekke as &$value){
-    $value = rand(1,100);
-}
-
-echo "Foreach løkke etter at starttallene er endret:<br>";
-foreach($rekke as $key => $value2){
-    echo $value2."<br>";
-}
-
-echo "<br>";
-
-foreach($rekke2 as $key =>$value) {
-    $value = $value + 10;
-    echo $value."<br>";
-}
+echo "</pre>";
 
 
-
-echo "<br>";
+//Lager en array med nye verdier, bruker array_replace til å erstatte inneholdet i $rekke arrayen
+$nyeVerdier = array("En", "To", "Tre", "Fire", "Fem", "Seks", "Syv", "Åtte","Ni", "Ti");
+$rekke2 = array_replace($rekke, $nyeVerdier);
 echo "<pre>";
 print_r($rekke2);
-echo "</pre><br>";
+echo "</pre>";
+
+//Legger en ny startindex på 10. Bruker array combine til å slå sammen disse og få en ny array som heter $base3
+$newStartIndex = 10;
+$rekke3 = array_combine(range($newStartIndex, count($rekke2) + ($newStartIndex-1)),array_values($rekke2));
+
+echo "<pre>";
+print_r($rekke3);
+echo "</pre>";
+
+
+
 
 ?>
 

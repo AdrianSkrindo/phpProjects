@@ -16,10 +16,12 @@
     løkke (som du lærte i forrige modul). */
     
     $matrise = array(0 => 10, 3 => 20, 5 => 30, 7 => 40, 8 => 50, 15 => 60); 
-    
+    //start-matrise, med fulle elementer, indeks og verdi
+
     print_r($matrise);
     echo "<br><br>";
 
+    //printer matrisen på skjermen, både nøkkel og verdi
     foreach ($matrise as $indeks => $verdi) { 
     echo $indeks ."=". $verdi."<br>"; 
     }

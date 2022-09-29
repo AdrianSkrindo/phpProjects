@@ -19,8 +19,8 @@ periode på n år kan beregnes. Skriv ut ny saldo for hvert år og Sn etter n å
     $i = ""; //lager en tom variable antall år. Setter denne til null inni for-loopen. 
     $saldo = 250000; //bestemmer startsaldo
 
-    for ($i = 0; $i <= 10; $i++) { //bestemmer at den skal gå i frem til og med år 10. Og at det skal ganges med 1.05, som da er renta. 
-        $saldo = $saldo*1.05;
+    for ($i = 0; $i <= 10; $i++) { //bestemmer at den skal gå i frem til og med år 10. 
+        $saldo = $saldo*1.05; //Og at det skal ganges med 1.05, som da er renta. 
         echo "Etter ".$i." år, er saldo på konto ".$saldo."kr.<br>"; //Printer ut ny saldo for hvert år.
 
     }
