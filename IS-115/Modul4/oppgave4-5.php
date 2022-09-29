@@ -12,22 +12,31 @@ Når det er én deltaker igjen, skal navnet på vinneren annonseres.
 */
 
 $deltakere = array(
-    'Adrian' => 0,
-    'Simen' =>0,
-    'Emanuel' =>0,
-    'Kenny'=>0,
-    'Kevin'=>0,
-    'Sondre' =>0,
-    'Peter'=>0,
-    'Markus'=>0,
-    'Ulrik'=>0,
-    'Steffen'=>0
+    array('Adrian', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Simen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Emanuel', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Kenny', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Kevin', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Sondre', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Peter', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Markus', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Ulrik', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+    array('Steffen', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 );
+
+echo "<pre>";
+print_r($deltakere);
+echo "</pre>";
+
+
 
 foreach($deltakere as $navn => $poeng){
     echo $navn." har ".$poeng." poeng.<br>";
 }
 
+
+//Lage en matrise for hver runde, returnere verdien av indeksen på den som scorer lavest, for så å trekke fra i neste matrise?
+/*
 foreach($deltakere as &$poeng){
     $poeng = rand(1,50);
 }
@@ -43,7 +52,7 @@ $fjernet = array_shift($deltakere);
 
 echo "<br>";
 echo $fjernet." hadde minst poengsum, og ryker dermed ut av konkurransen!";
-/*foreach($deltakere as $navn => $poeng){
+foreach($deltakere as $navn => $poeng){
     echo $navn." har ".$poeng." poeng.<br>";
 }*/
 
