@@ -11,6 +11,9 @@ echo "<pre>";
 print_r($rekke);
 echo "</pre>";
 
+foreach($rekke as $key => $value){
+    echo $value."<br>";
+}
 
 //Lager en array med nye verdier, bruker array_replace til å erstatte inneholdet i $rekke arrayen
 $nyeVerdier = array("En", "To", "Tre", "Fire", "Fem", "Seks", "Syv", "Åtte","Ni", "Ti");
