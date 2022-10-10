@@ -1,8 +1,8 @@
 <?php
 
-
+    //inkluderer filen funksjoner.php, for å benytte funksjonen gjennomsnitt og standaravvik som er laget der.
     include 'funksjoner.php';
-    //to isset funksjoner, bestemmer hvilken av regneoperasjonen som skal utføres.
+    //to isset funksjoner, bestemmer hvilken av regneoperasjonen som skal utføres. hvilken knapp er trykt?
     if(isset($_REQUEST['gjennomsnitt'])){
         echo "Gjennomsnittet av tallene ".$_REQUEST['tall1'].", ".$_REQUEST['tall2'].", ".$_REQUEST['tall3']." ,".$_REQUEST['tall4']." er: " .
         gjennomsnitt($_REQUEST['tall1'],$_REQUEST['tall2'],$_REQUEST['tall3'],$_REQUEST['tall4'],);
