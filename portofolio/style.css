@@ -1,6 +1,34 @@
+:root {
+  --Beige: #DDC3A5;
+  --DarkBrown: #201E20;
+  --Tan: #E0A96D;
+}
+
 body {
-    background-color: black;
+    background-color: var(--Beige);
     font-family: 'Courier New', monospace;
+    padding: 0;
+    margin: 0;
+  }
+
+  section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 150vh;
+  }
+
+  .hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+
+  .show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
   }
   
   .glow {
