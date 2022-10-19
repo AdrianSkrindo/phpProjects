@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .glow {
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    animation: glow 500ms ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px #16a425, 0 0 5px #e60073, 0 0 5px #25c578, 0 0 5px #e60073, 0 0 5px #1cc739;
+    }
+    
+    to {
+      text-shadow: 0 0 7px #fff, 0 0 7px #ff4da6, 0 0 7px #2c8b32, 0 0 7px #ff4da6, 0 0 7px #279655, 0 0 7px #ff4da6, 0 0 7px #2d49a5;
+    }
+  }
