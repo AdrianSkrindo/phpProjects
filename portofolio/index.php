@@ -18,8 +18,24 @@
   </section>
 
   <section class="hidden">
-    <h2>Some random text</h2>
-    <p>This is my website</p>
+    <h2>Techstack</h2>
+    <div class="logos">
+      <div class="logo hidden">
+        <img src="phplogo.png">
+      </div>
+      <div class="logo hidden">
+        <img src="csslogo.png">
+      </div>
+      <div class="logo hidden">
+        <img src="htmllogo.png">
+      </div>
+      <div class="logo hidden">
+        <img src="javascriptlogo.png">
+      </div>
+      <div class="logo hidden">
+        <img src="mysqllogo.png">
+      </div>
+    </div>
   </section>
 
   <section class="hidden">
