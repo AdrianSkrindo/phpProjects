@@ -9,6 +9,7 @@ body {
     font-family: 'Courier New', monospace;
     padding: 0;
     margin: 0;
+    background-image: url("background.png");
   }
 
   section {
@@ -41,6 +42,10 @@ body {
 
   .logo:nth-child(5){
     transition-delay: 800ms;
+  }
+
+  .logo:nth-child(5){
+    transition-delay: 1000ms;
   }
 
 
