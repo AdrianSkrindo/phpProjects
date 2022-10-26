@@ -11,11 +11,11 @@
     <h1>Modul 6</h1>
 
     <div class="center">
-        <a href="oppgave6-1.php"> Oppgave 1</a> - <br>
-        <a href="oppgave6-2.php"> Oppgave 2</a> - <br>
-        <a href="oppgave6-3.php"> Oppgave 3</a> - <br>
-        <a href="oppgave6-4.php"> Oppgave 4</a> - <br>
-        <a href="oppgave6-5.php"> Oppgave 5</a> - <br>
+        <a href="oppgave6-1.php"> Oppgave 1</a> - lage klasse <br>
+        <a href="oppgave6-2.php"> Oppgave 2</a> - arv <br>
+        <a href="oppgave6-3.php"> Oppgave 3</a> - tilgangskontroll og automatiske oppgaver <br>
+        <a href="oppgave6-4.php"> Oppgave 4</a> - planlegging av system<br>
+        <a href="oppgave6-5.php"> Oppgave 5</a> - lynmeldinger<br>
     </div>
 
     
