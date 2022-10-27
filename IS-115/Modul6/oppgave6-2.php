@@ -35,7 +35,8 @@
         $student1->forNavn = "Emanuel";
         $student1->studentNr ="123123";
 
-
+        echo "Begge funksjonen under, utfører metoden getNavn(); <br>Men hvor metoden fra student-klassen vil retrunere studennummeret til brukeren i tilegg.";
+        echo "<br><br>";
         echo $bruker1 -> getNavn();
         echo "<br><br>";
         echo $student1 -> getNavn();

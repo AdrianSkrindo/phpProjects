@@ -14,14 +14,16 @@
         class Bruker {
             var $forNavn;
             var $etterNavn;
-            protected $reg;
+            var $reg;
+            var $brukerNavn;
 
-            public static $brukerNavn = 0;
 
             public function __construct()
             {
                 self::$brukerNavn = "hei";
+                self::$reg = date("Y/m/d");
             }
+
 
         
         }
@@ -29,7 +31,6 @@
         $bruker1 = new Bruker;
         $bruker1->forNavn = "Adrian";
         $bruker1->etterNavn = "Lindland";
-        $bruker1->reg ="Nå!";
 
         echo $bruker1 -> forNavn;
         echo "<br>";
