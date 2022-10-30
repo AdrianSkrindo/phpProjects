@@ -11,12 +11,13 @@
     <h1>Modul 7</h1>
 
     <div class="center">
-        <a href="oppgave7-1.php"> Oppgave 1</a> - <br>
-        <a href="oppgave7-2.php"> Oppgave 2</a> - <br>
-        <a href="oppgave7-3.php"> Oppgave 3</a> - <br>
-        <a href="oppgave7-4.php"> Oppgave 4</a> - <br>
-        <a href="oppgave7-5.php"> Oppgave 5</a> - <br>
+        <a href="oppgave7-1.php"> Oppgave 1</a> - liste<br>
+        <a href="oppgave7-2.php"> Oppgave 2</a> - registrering av ny bruker<br>
+        <a href="oppgave7-3.php"> Oppgave 3</a> - sikkerhetskopi<br>
+        <a href="oppgave7-4.php"> Oppgave 4</a> - datostyring<br>
+        <a href="oppgave7-5.php"> Oppgave 5</a> - gruppering<br>
     </div>
+
 
     
 </body>
