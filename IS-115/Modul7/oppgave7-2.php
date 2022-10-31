@@ -12,7 +12,7 @@ $q->bindParam(':fnavn', $firstname, PDO::PARAM_STR);
 $q->bindParam(':enavn', $lastname, PDO::PARAM_STR);
 $q->bindParam(':epost', $epost, PDO::PARAM_STR);
 $q->bindParam(':tlf', $telefon, PDO::PARAM_STR);
-$q->bindParam(':fdate', $fdato, PDO::PARAM_INT);
+$q->bindParam(':fdate', $fdato, PDO::PARAM_STR);
 
 if (isset($_REQUEST['registrer'])) {
     $firstname = $_REQUEST['fnavn'];
@@ -30,7 +30,7 @@ if (isset($_REQUEST['registrer'])) {
 
     //Sjekker om noe er satt inn, returnerer UID.
     if ($pdo->lastInsertId() > 0) {
-        echo "Data inserted into database, identified by UID " . $pdo->lastInsertId() . ".";
+        echo "Data inserted into database, identified by BID " . $pdo->lastInsertId() . ".";
     } else {
         echo "Data were not inserted into database.";
     }
