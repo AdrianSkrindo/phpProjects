@@ -11,11 +11,11 @@
     <h1>Modul 9</h1>
 
     <div class="center">
-        <a href="oppgave9-1.php"> Oppgave 1</a> - <br>
-        <a href="oppgave9-2.php"> Oppgave 2</a> - <br>
-        <a href="oppgave9-3.php"> Oppgave 3</a> - <br>
-        <a href="oppgave9-4.php"> Oppgave 4</a> - <br>
-        <a href="oppgave9-5.php"> Oppgave 5</a> - <br>
+        <a href="oppgave9-1.php"> Oppgave 1</a> - lese informasjon om filer<br>
+        <a href="oppgave9-2.php"> Oppgave 2</a> - loggfunksjon<br>
+        <a href="oppgave9-3.php"> Oppgave 3</a> - last opp fil<br>
+        <a href="oppgave9-4.php"> Oppgave 4</a> - nedlastning av fil<br>
+        <a href="oppgave9-5.php"> Oppgave 5</a> - faktura<br>
     </div>
 
     
