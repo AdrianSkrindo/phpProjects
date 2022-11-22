@@ -1,2 +1,8 @@
-Data was written to file: 22.11.2022 kl. 15:08 
-Filename: files/m9.txt 
+Data was written to file: 22.11.2022 kl. 17:51 
+Filename: m9.txt 
+Data was written to file: 22.11.2022 kl. 17:51 
+Filename: m9.txt 
+Data was written to file: 22.11.2022 kl. 17:52 
+Filename: m9.txt 
+Data was written to file: 22.11.2022 kl. 17:52 
+Filename: m9.txt 

@@ -9,24 +9,26 @@
 <body>
     
 <?php
-    /* File meta data */
+    /* Filnavn, og katalog */
     $dir = "files/";
     $filename = "m9.txt";
 
-    /* No directory with that name? */
+    /* Ser om  katalogen finnes*/
     if(!file_exists($dir)) 
     {
         if (!mkdir($dir, 0777, true)) 
             die("Cannot create directory..." . $dir);
     }
     
-    /* File handler */
-    $fh = fopen($dir . $filename, "w");
+    /* Forteller hva vi skal gjøre med fila */
+    /* a+ forteller at vi ønsker å skrive og lese, plassrere skriver på slutten av filen. */
+    $fh = fopen($dir . $filename, "a+");
 
-    /* File data */
+    /* Hva skrives inn i selve filen.*/
     $txt  = "Data was written to file: " . date('d.m.Y k\l. H:i') . " \r\n";
-    $txt .= "Filename: " . $dir . $filename . " \r\n";
+    $txt .= "Filename: " . $filename . " \r\n";
     
+    /* Hva skrives ut på skjermen */
     if($r = fwrite($fh, $txt))
         echo $r . " bytes were written to file " . $filename . ".";
     else
