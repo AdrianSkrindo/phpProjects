@@ -17,7 +17,7 @@
         $dir = "files/";
         $filename = "m9.txt";
 
-        /* Ser om  katalogen finnes*/
+        /* Ser om  katalogen finnes, hvis ikke mekker vi en*/
         if (!file_exists($dir)) {
             if (!mkdir($dir, 0777, true))
                 die("Cannot create directory..." . $dir);

@@ -22,7 +22,8 @@ if (isset($_REQUEST['upload-send']))
         $file_type = $_FILES['upload-file']['type'];
         $file_size = $_FILES['upload-file']['size'];
         
-        $acc_file_types = array("jpg" => "image/jpeg",
+        $acc_file_types = array("jpeg" => "image/jpeg",
+                                "jpg" => "image/jpg",
                                 "png" => "image/png"
         );
         $max_file_size = 2000000; // i bytes
