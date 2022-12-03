@@ -1,7 +1,7 @@
 <?php
 require_once('db.inc.php');
 
-/* Form submit? */
+// Hvis knappen er trykket 
 if (isset($_REQUEST['upload-send'])) 
 {
     echo "<pre>";
@@ -12,36 +12,34 @@ if (isset($_REQUEST['upload-send']))
     echo "File size: " . $_FILES['upload-file']['size'] . " bytes (" . round($_FILES['upload-file']['size'] / 1048576, 2) . " MB) <br><br>";
     echo "</pre>";
     
-    /* Define array for messages */
+    // Feilmeldinger
     $messages = array();
     
-    /* File upload */
+    // File upload 
     if (is_uploaded_file($_FILES['upload-file']['tmp_name'])) 
     {
-        /* Collecting information about file */
+        // Henter informasjon om filen som er sendt
         $file_type = $_FILES['upload-file']['type'];
         $file_size = $_FILES['upload-file']['size'];
         
-        /* Configurations
-           Common mime types: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
-         */
-        $acc_file_types = array("jpg" => "image/jpeg",
+        $acc_file_types = array("jpeg" => "image/jpeg",
+                                "jpg" => "image/jpg",
                                 "png" => "image/png"
         );
-        $max_file_size = 2000000; // in bytes
+        $max_file_size = 2000000; // i bytes
         $dir = $_SERVER['DOCUMENT_ROOT'] . "/phpProjects/IS-115/modul9/files/";
 
-        /* No directory with that name? */
+        // Mekker katalog, hvis den ikke allerede finnes
         if(!file_exists($dir)) 
         {
             if (!mkdir($dir, 0777, true)) 
                 die("Cannot create directory..." . $dir);
         }
         
-        /* Constructing file name */
+        // Sjekker hvilke filtype det er, gir dette til variablene, som brukes i navngenerering
         $suffix = array_search($_FILES['upload-file']['type'], $acc_file_types);
 
-        /* If the file already exists for some reason */
+        // mekker navnet på filen, ved hjelp av ønskelig input + filtype
         do {
             //$filename  = substr(md5(date('YmdHis')), 0, 5) . '.' . $suffix;
             $filename = $_POST['navn']. '.' . $suffix;
@@ -57,10 +55,10 @@ if (isset($_REQUEST['upload-send']))
         if ($file_size > $max_file_size)
             $messages['error'][] = "The file size (" . round($file_size / 1048576, 2) . " MB) exceeds max file size (" . round($max_file_size / 1048576, 2) . " MB)"; // Bin. conversion
         
-        /* If everything is fine */
+        // Hvis alt går etter planen
         if (empty($messages)) 
         {
-            /* Moving uploaded file to its new home */
+            //Bestemmer hvor filen skal plasseres, og laster den opp. 
             $filepath = $dir . $filename;
             $uploaded_file = move_uploaded_file($_FILES['upload-file']['tmp_name'], $filepath);
             
@@ -71,7 +69,8 @@ if (isset($_REQUEST['upload-send']))
 
 
         }
-
+        
+        //Ved en eventuel ekte database, bruk $_session[bruker]-typ
         $brukernavn = "Bruker1";
 
         $sql = "INSERT INTO brukere
@@ -104,7 +103,7 @@ if (isset($_REQUEST['upload-send']))
 
 <body>
 <?php
-    /* Output messages to user */
+    // Ved eventuelle feil
     if(isset($messages) && !empty($messages))
     {
         echo "<strong>Message" . (sizeof($messages, COUNT_RECURSIVE)-1 > 1 ? "s:<br>" : ":<br>") . "</strong>";
@@ -118,18 +117,18 @@ if (isset($_REQUEST['upload-send']))
     }
     else
     {
-        echo "<strong>Please select file to upload</strong>";
+        echo "Velg bildet du ønsker å laste opp.";
     }
 ?>
 
     <form method="POST" action="" enctype="multipart/form-data">
         <p>
-            <label for="upload-file">Select file</label>
+            <label for="upload-file">Velg fil</label>
             <input name="upload-file" type="file">
             Ønsket navn: <input type="text" name = "navn" required>
         </p>
-        <p><button type="submit" name="upload-send">Upload file</button></p>
-    </form> <br> <br>
+        <p><button type="submit" name="upload-send">Last opp</button></p>
+    </form> <br> I et prosjekt, ville jeg brukt session id/navn til å bestemme eventuell bruker/navn på bilde. <br>
     <a href="oppgave9-3sjekk.php"> Klikk her for å sjekke opplastede bilder. </a>
 </body>
 </html>

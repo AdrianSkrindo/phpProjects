@@ -20,9 +20,10 @@
 
         <?php
             $dir = "../Modul9/";
-            $fh = opendir($dir); // fh = file handle or "pointer"
+            $fh = opendir($dir); // fh = file handler eller "peker"
+            //opendir for å "starte" arbeidet rundt filen/katalogen
 
-            /* Iterate file directory */
+            /* readdir, returnerer neste fil i katalogen, hvis ikke null.  */
             while($file = readdir($fh)) 
             {
                 echo "<tr>";
@@ -37,6 +38,7 @@
             }
             
             closedir($fh);
+            //husk å legge til eventuell peker, hvis ikke lukker den bare den siste som ble brukt.
         ?>
 
     </table>
